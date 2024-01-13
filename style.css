@@ -28,3 +28,19 @@ body, html {
         font-size: 20vh;
     }
 }
+
+
+/* Animation keyframes */
+@keyframes grow {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Class to apply animation */
+.animate-grow {
+    animation: grow 0.5s ease-out;
+}

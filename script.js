@@ -8,23 +8,33 @@ function replaceWord() {
     let max = parseInt(urlParams.get('max'), 10);
 
     // Validate min and max; if invalid, use default range 2 to 4
-    if (isNaN(min) || min < 2) min = 2;
-    if (isNaN(max) || max > 4 || max < min) max = 4;
+    if (isNaN(min)) min = 2;
+    if (isNaN(max)) max = 4;
 
-    // Adjusting the length to account for the image
-    const wordLength = Math.floor(Math.random() * (max - min + 1)) + min - 1;
-
-    const characters = ["N", "W", "S", "E"];
+    const characters = [
+        // "N", 
+        // "W", 
+        // "S", 
+        // "E", 
+        '<img src="rotating-arrow-symbol.png" alt="Icon" class="word-icon">',
+        '<img src="arrow-down.png" alt="Icon" class="word-icon">',
+        '<img src="arrow-up.png" alt="Icon" class="word-icon">',
+        '<img src="arrow-left.png" alt="Icon" class="word-icon">',
+        '<img src="arrow-right.png" alt="Icon" class="word-icon">',
+    ];
     let newWord = '';
 
+    const wordLength = Math.floor(Math.random() * (max - min + 1)) + min;
     for (let i = 0; i < wordLength; i++) {
         newWord += characters[Math.floor(Math.random() * characters.length)];
     }
 
-    // Insert the PNG image at a random position in the new word
-    const imageHtml = '<img src="rotating-arrow-symbol.png" alt="Icon" class="word-icon">';
-    const position = Math.floor(Math.random() * (newWord.length + 1));
-    newWord = newWord.slice(0, position) + imageHtml + newWord.slice(position);
+    const wordContainer = document.getElementById('word-container');
+    wordContainer.innerHTML = newWord;
 
-    document.getElementById('word-container').innerHTML = newWord;
+    // Remove the animation class and re-add it to trigger the animation
+    wordContainer.classList.remove('animate-grow');
+    // Trigger reflow to restart the animation
+    void wordContainer.offsetWidth;
+    wordContainer.classList.add('animate-grow');
 }
