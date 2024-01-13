@@ -8,8 +8,8 @@ function replaceWord() {
     let max = parseInt(urlParams.get('max'), 10);
 
     // Validate min and max; if invalid, use default range 2 to 4
-    if (isNaN(min)) min = 2;
-    if (isNaN(max)) max = 4;
+    if (isNaN(min)) min = 1;
+    if (isNaN(max)) max = 2;
 
     const characters = [
         // "N", 
