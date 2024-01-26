@@ -17,10 +17,8 @@ function replaceWord() {
         // "S", 
         // "E", 
         '<img src="rotating-arrow-symbol.png" alt="Icon" class="word-icon">',
-        '<img src="arrow-down.png" alt="Icon" class="word-icon">',
-        '<img src="arrow-up.png" alt="Icon" class="word-icon">',
-        '<img src="arrow-left.png" alt="Icon" class="word-icon">',
-        '<img src="arrow-right.png" alt="Icon" class="word-icon">',
+        '<img src="vertical-arrow.png" alt="Icon" class="word-icon">',
+        '<img src="double-arrow.png" alt="hori" class="word-icon">',
     ];
     let newWord = '';
 
