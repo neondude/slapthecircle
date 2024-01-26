@@ -16,7 +16,7 @@ function replaceWord() {
         // "W", 
         // "S", 
         // "E", 
-        '<img src="rotating-arrow-symbol.png" alt="Icon" class="word-icon">',
+        '<img src="rotating-arrow-symbol.png" alt="Icon" class="word-icon" style="width:0.7em; height:0.7em;">',
         '<img src="vertical-arrow.png" alt="Icon" class="word-icon">',
         '<img src="double-arrow.png" alt="hori" class="word-icon">',
     ];
